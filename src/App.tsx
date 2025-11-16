@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { CityMap } from './components/CityMap';
 import { CitySelector } from './components/CitySelector';
 import { CityDetail } from './pages/CityDetail';
@@ -16,10 +16,9 @@ export type CityMeta = {
 	geojsonPath: string;
 };
 
-function HomePage() {
+function HomePage({ metersPerPixel }: { metersPerPixel: number }) {
 	const [cities, setCities] = useState<CityMeta[]>([]);
 	const [selectedIds, setSelectedIds] = useState<string[]>([]);
-	const [metersPerPixel, setMetersPerPixel] = useState<number>(2000); // default 2km per pixel
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -106,7 +105,7 @@ export default function App() {
 				</div>
 			</header>
 			<Routes>
-				<Route path="/" element={<HomePage />} />
+				<Route path="/" element={<HomePage metersPerPixel={metersPerPixel} />} />
 				<Route path="/city/:id" element={<CityDetail defaultMetersPerPixel={metersPerPixel} />} />
 			</Routes>
 			<footer className="app-footer">

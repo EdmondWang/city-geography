@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { CityMap } from '../components/CityMap';
 import type { CityMeta } from '../App';
@@ -20,7 +20,6 @@ type Props = {
 
 export function CityDetail({ defaultMetersPerPixel }: Props) {
 	const { id } = useParams<{ id: string }>();
-	const [cities, setCities] = useState<CityMeta[]>([]);
 	const [city, setCity] = useState<CityMeta | null>(null);
 	const [meta, setMeta] = useState<CityMetadata | null>(null);
 	const [metersPerPixel, setMetersPerPixel] = useState<number>(defaultMetersPerPixel);
@@ -29,7 +28,6 @@ export function CityDetail({ defaultMetersPerPixel }: Props) {
 		fetch('/data/cities.json')
 			.then((r) => r.json())
 			.then((data: CityMeta[]) => {
-				setCities(data);
 				const found = data.find((c) => c.id === id);
 				if (found) setCity(found);
 			})
