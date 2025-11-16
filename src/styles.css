@@ -183,10 +183,9 @@ body {
 }
 
 .citymap-boundary {
-	fill: url(#cityGradient);
-	fill: none;
+	fill: rgba(77, 163, 255, 0.12);
 	stroke: var(--accent);
-	stroke-width: 2;
+	stroke-width: 1.5;
 	vector-effect: non-scaling-stroke;
 }
 
