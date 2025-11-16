@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "New York (simplified demo)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-75.0, 41.1],
+            [-72.9, 41.1],
+            [-72.9, 40.2],
+            [-75.0, 40.2],
+            [-75.0, 41.1]
+          ]
+        ]
+      }
+    }
+  ]
+}
+
+

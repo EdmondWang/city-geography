@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shanghai (simplified demo)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [120.9, 31.9],
+            [122.0, 31.9],
+            [122.0, 30.6],
+            [120.9, 30.6],
+            [120.9, 31.9]
+          ]
+        ]
+      }
+    }
+  ]
+}
+
+

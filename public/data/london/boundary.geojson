@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "London (simplified demo)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-0.8, 51.8],
+            [0.4, 51.8],
+            [0.4, 51.2],
+            [-0.8, 51.2],
+            [-0.8, 51.8]
+          ]
+        ]
+      }
+    }
+  ]
+}
+
+

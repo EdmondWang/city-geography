@@ -1,0 +1,36 @@
+[
+  {
+    "id": "beijing",
+    "name": "北京",
+    "country": "中国",
+    "centerLat": 39.9,
+    "geojsonPath": "/data/beijing/boundary.geojson",
+    "preferredMpp": 2500
+  },
+  {
+    "id": "shanghai",
+    "name": "上海",
+    "country": "中国",
+    "centerLat": 31.2,
+    "geojsonPath": "/data/shanghai/boundary.geojson",
+    "preferredMpp": 2500
+  },
+  {
+    "id": "newyork",
+    "name": "New York",
+    "country": "USA",
+    "centerLat": 40.7,
+    "geojsonPath": "/data/newyork/boundary.geojson",
+    "preferredMpp": 2500
+  },
+  {
+    "id": "london",
+    "name": "London",
+    "country": "UK",
+    "centerLat": 51.5,
+    "geojsonPath": "/data/london/boundary.geojson",
+    "preferredMpp": 2500
+  }
+]
+
+

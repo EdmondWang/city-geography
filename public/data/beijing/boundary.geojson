@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Beijing (simplified demo)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [115.5, 40.9],
+            [117.6, 40.9],
+            [117.6, 39.4],
+            [115.5, 39.4],
+            [115.5, 40.9]
+          ]
+        ]
+      }
+    }
+  ]
+}
+
+
