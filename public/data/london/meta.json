@@ -1,0 +1,12 @@
+{
+  "name": "London",
+  "country": "UK",
+  "population": 8982000,
+  "areaKm2": 1572,
+  "densityPerKm2": 5717,
+  "coordinates": { "lat": 51.5074, "lon": -0.1278 },
+  "region": "England",
+  "history": "伦敦建城可追溯至罗马时期的伦迪尼姆。作为大英帝国的首都，见证了工业革命与现代化进程，在金融、文化、教育等方面享有全球声誉。"
+}
+
+

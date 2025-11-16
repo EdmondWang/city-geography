@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as d3 from 'd3-geo';
+import type { FeatureCollection as GeoJSONFeatureCollection } from 'geojson';
 import type { CityMeta } from '../App';
 
 type Props = {
@@ -7,17 +8,7 @@ type Props = {
 	metersPerPixel: number;
 };
 
-type FeatureCollection = {
-	type: 'FeatureCollection';
-	features: Array<{
-		type: 'Feature';
-		properties: Record<string, unknown>;
-		geometry: {
-			type: 'Polygon' | 'MultiPolygon';
-			coordinates: number[][][] | number[][][][];
-		};
-	}>;
-};
+type FeatureCollection = GeoJSONFeatureCollection;
 
 const EARTH_RADIUS_METERS = 6378137; // Web Mercator sphere
 
@@ -73,7 +64,7 @@ export function CityMap({ city, metersPerPixel }: Props) {
 		const path = d3.geoPath(projection);
 
 		// project all points to determine bounds in pixels at the unified scale
-		const bounds = path.bounds(geo as unknown as GeoJSON.FeatureCollection);
+		const bounds = path.bounds(geo as unknown as any);
 		const [x0, y0] = bounds[0];
 		const [x1, y1] = bounds[1];
 		const w = x1 - x0;
@@ -102,10 +93,7 @@ export function CityMap({ city, metersPerPixel }: Props) {
 		<div ref={containerRef} className="citymap-container">
 			<svg className="citymap-svg" width="100%" height="100%" viewBox={`0 0 ${size.width} ${size.height}`}>
 				<g transform={`translate(${view.translate[0]}, ${view.translate[1]}) scale(${view.downscale})`}>
-					<path
-						d={view.path(geo as unknown as GeoJSON.FeatureCollection) || ''}
-						className="citymap-boundary"
-					/>
+					<path d={view.path(geo as unknown as any) || ''} className="citymap-boundary" />
 				</g>
 			</svg>
 		</div>

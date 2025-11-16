@@ -1,4 +1,5 @@
 import type { CityMeta } from '../App';
+import { Link } from 'react-router-dom';
 
 type Props = {
 	cities: CityMeta[];
@@ -23,6 +24,7 @@ export function CitySelector({ cities, selectedIds, onToggleCity }: Props) {
 								/>
 								<span className="name">{c.name}</span>
 								{c.country ? <span className="country">{c.country}</span> : null}
+								<Link to={`/city/${c.id}`} className="link-btn" style={{ marginLeft: 8 }}>详情</Link>
 							</label>
 						</li>
 					);

@@ -168,6 +168,23 @@ body {
 	border-bottom: 1px solid var(--border);
 	font-size: 14px;
 	color: var(--muted);
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.link-btn, .link {
+	color: var(--accent);
+	text-decoration: none;
+	background: transparent;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	padding: 2px 6px;
+	cursor: pointer;
+	font-size: 12px;
+}
+.link-btn:hover, .link:hover {
+	text-decoration: underline;
 }
 
 .citymap-container {

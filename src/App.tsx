@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import { CityMap } from './components/CityMap';
 import { CitySelector } from './components/CitySelector';
+import { CityDetail } from './pages/CityDetail';
 
 export type CityMeta = {
 	id: string;
@@ -14,10 +16,11 @@ export type CityMeta = {
 	geojsonPath: string;
 };
 
-export default function App() {
+function HomePage() {
 	const [cities, setCities] = useState<CityMeta[]>([]);
 	const [selectedIds, setSelectedIds] = useState<string[]>([]);
 	const [metersPerPixel, setMetersPerPixel] = useState<number>(2000); // default 2km per pixel
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		fetch('/data/cities.json')
@@ -46,24 +49,7 @@ export default function App() {
 	};
 
 	return (
-		<div className="app-root">
-			<header className="app-header">
-				<div className="title">城市大小比较</div>
-				<div className="controls">
-					<label className="mpp">
-						<span>比例（米/像素）</span>
-						<input
-							type="range"
-							min={100}
-							max={20000}
-							step={100}
-							value={metersPerPixel}
-							onChange={(e) => setMetersPerPixel(parseInt(e.target.value, 10))}
-						/>
-						<span className="value">{metersPerPixel.toLocaleString()} m/px</span>
-					</label>
-				</div>
-			</header>
+		<>
 			<main className="app-main">
 				<aside className="sidebar">
 					<CitySelector
@@ -81,6 +67,7 @@ export default function App() {
 							<div className="canvas-title">
 								{city.name}
 								{city.country ? `，${city.country}` : ''}
+								<button className="link-btn" onClick={() => navigate(`/city/${city.id}`)}>详情</button>
 							</div>
 							<CityMap
 								city={city}
@@ -93,11 +80,39 @@ export default function App() {
 					)}
 				</section>
 			</main>
+		</>
+	);
+}
+
+export default function App() {
+	const [metersPerPixel, setMetersPerPixel] = useState<number>(2000);
+	return (
+		<div className="app-root">
+			<header className="app-header">
+				<div className="title"><a href="/" className="brand">城市大小比较</a></div>
+				<div className="controls">
+					<label className="mpp">
+						<span>比例（米/像素）</span>
+						<input
+							type="range"
+							min={100}
+							max={20000}
+							step={100}
+							value={metersPerPixel}
+							onChange={(e) => setMetersPerPixel(parseInt(e.target.value, 10))}
+						/>
+						<span className="value">{metersPerPixel.toLocaleString()} m/px</span>
+					</label>
+				</div>
+			</header>
+			<Routes>
+				<Route path="/" element={<HomePage />} />
+				<Route path="/city/:id" element={<CityDetail defaultMetersPerPixel={metersPerPixel} />} />
+			</Routes>
 			<footer className="app-footer">
 				<span>React + Vite + D3 • 统一比例渲染</span>
 			</footer>
 		</div>
 	);
 }
-
 

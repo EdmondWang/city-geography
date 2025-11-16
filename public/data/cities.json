@@ -5,7 +5,8 @@
     "country": "中国",
     "centerLat": 39.9,
     "geojsonPath": "/data/beijing/boundary.geojson",
-    "preferredMpp": 2500
+    "preferredMpp": 2500,
+    "metaPath": "/data/beijing/meta.json"
   },
   {
     "id": "shanghai",
@@ -13,7 +14,8 @@
     "country": "中国",
     "centerLat": 31.2,
     "geojsonPath": "/data/shanghai/boundary.geojson",
-    "preferredMpp": 2500
+    "preferredMpp": 2500,
+    "metaPath": "/data/shanghai/meta.json"
   },
   {
     "id": "newyork",
@@ -21,7 +23,8 @@
     "country": "USA",
     "centerLat": 40.7,
     "geojsonPath": "/data/newyork/boundary.geojson",
-    "preferredMpp": 2500
+    "preferredMpp": 2500,
+    "metaPath": "/data/newyork/meta.json"
   },
   {
     "id": "london",
@@ -29,7 +32,8 @@
     "country": "UK",
     "centerLat": 51.5,
     "geojsonPath": "/data/london/boundary.geojson",
-    "preferredMpp": 2500
+    "preferredMpp": 2500,
+    "metaPath": "/data/london/meta.json"
   }
 ]
 

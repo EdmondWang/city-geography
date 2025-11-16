@@ -1,0 +1,12 @@
+{
+  "name": "New York",
+  "country": "USA",
+  "population": 8467513,
+  "areaKm2": 783.8,
+  "densityPerKm2": 10802,
+  "coordinates": { "lat": 40.7128, "lon": -74.006 },
+  "region": "Northeastern US",
+  "history": "纽约市始建于17世纪，是全球最具影响力的城市之一，拥有华尔街、联合国总部与百老汇等地标，对金融、媒体、艺术与时尚具有全球影响。"
+}
+
+
